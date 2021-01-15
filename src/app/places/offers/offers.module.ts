@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OffersPageRoutingModule } from './offers-routing.module';
 
 import { OffersPage } from './offers.page';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
