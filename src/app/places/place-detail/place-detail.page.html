@@ -16,6 +16,13 @@
                     [routerLink]="['/', 'places', 'tabs', 'offers', 'edit', place.id]">
             EDIT
         </ion-button>
+        <ion-button (click)="bookPlace()"
+                    color="primary"
+                    fill="solid"
+                    expand="block">
+            Book
+        </ion-button>
+
         <ion-button (click)="onClickIonicNavControler()">Back ionic navCtrl</ion-button>
         <ion-button (click)="onClickRouter()">Back router</ion-button>
     </ion-buttons>
