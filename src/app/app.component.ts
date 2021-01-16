@@ -4,6 +4,7 @@ import {AlertController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {Router} from '@angular/router';
+import {AuthService} from './service/auth.service';
 
 @Component({
     selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
         private alertCtrl: AlertController,
-        private router: Router
+        private router: Router,
+        private authService: AuthService
     ) {
         this.initializeApp();
     }
@@ -40,8 +42,8 @@ export class AppComponent {
                 {
                     text: 'Log out',
                     handler: () => {
-                        console.log('loged out');
-                        this.router.navigate(['/places']);
+                        this.authService.logout();
+                        this.router.navigate(['/auth']);
                     }
                 }
             ]

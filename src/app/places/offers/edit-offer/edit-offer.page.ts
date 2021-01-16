@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PlacesService} from '../../../service/places.service';
-import {Place} from '../../../Model/place.model';
+import {Place} from '../../../model/place.model';
 import {ActivatedRoute} from '@angular/router';
 import {NavController} from '@ionic/angular';
 
