@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Place} from './place.model';
+import {Place} from '../Model/place.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +34,10 @@ private _places: Place[] = [
 
   get places(): any[] {
     return [...this._places];
+  }
+
+  getPlace(id: string): Place {
+    const newPlace = this._places.find(p => p.id === id);
+    return new Place(newPlace.id, newPlace.title, newPlace.description, newPlace.imageUrl, newPlace.price );
   }
 }

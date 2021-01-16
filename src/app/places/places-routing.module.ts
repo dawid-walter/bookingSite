@@ -17,7 +17,7 @@ const routes: Routes = [
                     },
                     {
                         path: ':placeId',
-                        loadChildren: () => import('./discover/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+                        loadChildren: () => import('./place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
                     }
                 ]
             },
@@ -38,9 +38,13 @@ const routes: Routes = [
                     },
                     {
                         path: ':placeId',
-                        loadChildren: () => import('./discover/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+                        loadChildren: () => import('./place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
                     }
                 ]
+            },
+            {
+                path: ':placeId',
+                loadChildren: () => import('./place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
             },
             {
                 path: '',

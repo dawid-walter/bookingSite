@@ -1,5 +1,15 @@
 export class Place {
 
+    /*constructor(public id: string,
+                public title: string,
+                public description: string,
+                public imageUrl: string,
+                public price: number) {
+    }*/
+
+
+
+
     constructor(private _id: string,
                 private _title: string,
                 private _description: string,
