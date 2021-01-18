@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PlacesService} from '../../service/places.service';
 import {MenuController} from '@ionic/angular';
 import {Place} from '../../model/place.model';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-discover',
@@ -11,7 +12,7 @@ import {Place} from '../../model/place.model';
 export class DiscoverPage implements OnInit {
     loadedPlaces: Place[];
 
-    constructor(private placesService: PlacesService, private menuCtrl: MenuController) {
+    constructor(private placesService: PlacesService, private menuCtrl: MenuController, private http: HttpClient) {
     }
 
     ngOnInit() {
