@@ -43,4 +43,8 @@ export class DiscoverPage implements OnInit {
     }
 
 
+    segmentChanged($event: CustomEvent) {
+        console.log($event.detail);
+
+    }
 }

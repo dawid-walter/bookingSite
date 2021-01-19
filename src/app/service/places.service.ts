@@ -30,6 +30,7 @@ export class PlacesService {
                 99.99
             )
         ];
+    const
 
     constructor(private http: HttpClient) {
     }

@@ -11,7 +11,16 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <ion-segment (ionChange)="segmentChanged($event)" value="discover" class="ion-padding">
+        <ion-segment-button value="discover">
+            <ion-label>Discover</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="all">
+            <ion-label>ALl</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
     <ion-grid>
         <ion-row>
             <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
@@ -48,6 +57,24 @@
                         </ion-label>
                     </ion-item>
                 </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+<!--            tworzenie listy gdzie zawartosc ladowana jest dynamicznie, np do aplikacji z poczta zeby nie zaladowac duzej ilosci pozycji odrazu-->
+            <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+                <ion-virtual-scroll [items]="loadedPlaces" approx-item-height="70px">
+                    <ion-item *virtualItem="let place"
+                              [routerLink]="['/', 'places', 'tabs', 'discover', place.id]" detail> <!--// routing do strony z detalami ktora wyswietla sie w tabsach-->
+                        <ion-thumbnail slot="start">
+                            <ion-img [src]="place.imageUrl"></ion-img>
+                        </ion-thumbnail>
+                        <ion-label>
+                            <h2>{{ place.title }}</h2>
+                            <p>{{ place.description }}</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-virtual-scroll>
             </ion-col>
         </ion-row>
     </ion-grid>
