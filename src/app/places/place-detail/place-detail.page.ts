@@ -50,6 +50,11 @@ export class PlaceDetailPage implements OnInit {
                 {
                     text: 'Random Date',
                     handler: () => this.createModal('random')
+                },
+                {
+                    text: 'Cancel',
+                    icon: 'close',
+                    role: 'cancel'
                 }
             ]
         }).then(actionEl => actionEl.present());
