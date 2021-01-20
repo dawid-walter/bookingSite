@@ -26,7 +26,7 @@ export class AuthPage implements OnInit {
                 this.isLoading = false;
                 loadingEl.dismiss();
                 this.router.navigateByUrl('/places');    /!*timeout, symulowanie czasu potrzebnego do uzyskania informacji z serwera czy jest zalogowany*!/
-            }, 1500);
+            }, 500);
         });
 
     }
