@@ -1,0 +1,10 @@
+<ion-item [routerLink]="['/', offer.id]" detail>
+  <!--// routerlink do zaladowania strony poza tabs (tabs znikaja), link musi byc zapisany w places-routing.module-->
+  <ion-thumbnail slot="start">
+    <ion-img [src]="offer.imageUrl"></ion-img>
+  </ion-thumbnail>
+  <ion-label>
+    <h2>{{ offer.title }}</h2>
+    <p>{{ offer.description }}</p>
+  </ion-label>
+</ion-item>

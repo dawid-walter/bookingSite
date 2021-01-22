@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Renderer2} from '@angular/core';
 
 import {AlertController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
@@ -12,13 +12,15 @@ import {AuthService} from './service/auth.service';
     styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+    darkMode: boolean;
+
     constructor(
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
         private alertCtrl: AlertController,
         private router: Router,
-        private authService: AuthService
+        private authService: AuthService,
     ) {
         this.initializeApp();
     }
@@ -27,6 +29,8 @@ export class AppComponent {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
+
+            this.checkDarkTheme();
         });
     }
 
@@ -48,5 +52,18 @@ export class AppComponent {
                 }
             ]
         }).then(alert => alert.present());
+    }
+
+    checkDarkTheme() {
+        const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mediaQueryList.matches) {
+            document.body.classList.toggle('dark');
+        }
+        this.darkMode = mediaQueryList.matches;
+    }
+
+    changeTheme() {
+        this.darkMode = !this.darkMode;
+        document.body.classList.toggle('dark');
     }
 }

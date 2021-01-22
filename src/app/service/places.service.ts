@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Place} from '../model/place.model';
 import {HttpClient} from '@angular/common/http';
+import {Observable, Subscriber} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'

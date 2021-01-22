@@ -4,13 +4,20 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>
-          PairBnB
+          jakaChata
         </ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
+
+        <ion-item lines="none">
+          <ion-icon name="moon-outline" slot="start"></ion-icon>
+          <ion-label>Swicth theme</ion-label>
+          <ion-toggle slot="end" (ionChange)="changeTheme()" [checked]= "darkMode"></ion-toggle>
+        </ion-item>
+
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/places/tabs/discover">
             <ion-icon name="business" slot="start" ></ion-icon>
